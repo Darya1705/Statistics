@@ -46,7 +46,7 @@ public class StatsService<i> {
     public int belowTheAverageSales(int[] sales) {
         int belowMonth = 0;
         for (int sale : sales) {
-            if (calculateMonth(sales) / sales.length >= sale) {
+            if (sale > averageValueMonth(sales)) {
                 belowMonth = belowMonth + 1;
             }
 
@@ -59,7 +59,7 @@ public class StatsService<i> {
     public int aboveAverageSales(int[] sales) {
         int aboveMonth = 0;
         for (int sale : sales) {
-            if (calculateMonth(sales) / sales.length < sale) {
+            if (sale < averageValueMonth(sales)) {
                aboveMonth = aboveMonth + 1;
             }
 
